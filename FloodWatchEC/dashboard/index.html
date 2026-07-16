@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>FloodWatchEC Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌊 FloodWatchEC</h1>
+
+    <p>Sistema de Monitoreo de Riesgo de Inundaciones</p>
+
+</header>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>🌡 Temperatura</h3>
+        <p id="temperatura">--</p>
+    </div>
+
+    <div class="card">
+        <h3>💨 Viento</h3>
+        <p id="viento">--</p>
+    </div>
+
+    <div class="card">
+        <h3>🌧 Precipitación</h3>
+        <p id="precipitacion">--</p>
+    </div>
+
+    <div class="card" id="card-riesgo">
+        <h3>⚠ Riesgo</h3>
+        <p id="riesgo">--</p>
+    </div>
+        <div class="card">
+        <h3>🌊 Marea</h3>
+        <p id="marea">--</p>
+    </div>
+
+    <div class="card">
+        <h3>🏞 Embalse</h3>
+        <p id="embalse">--</p>
+    </div>
+
+    <div class="card">
+        <h3>🚨 Alerta SNGR</h3>
+        <p id="alerta">--</p>
+    </div>
+
+    <div class="card">
+        <h3>⚠ Índice</h3>
+        <p id="indice">--</p>
+    </div>
+    <div class="actualizacion">
+        Última actualización:
+        <span id="hora"></span>
+    </div>
+
+</section>
+
+<section class="panel">
+
+    <h2>📋 Estado del sistema</h2>
+
+    <p>
+
+    FloodWatchEC integra información climática mediante Apache Kafka,
+    procesamiento distribuido con Apache Spark, almacenamiento en HDFS
+    y un Dashboard interactivo para monitorear el riesgo de inundaciones
+    durante eventos asociados al fenómeno de El Niño.
+
+    </p>
+
+</section>
+
+<div class="actualizacion">
+
+    Última actualización:
+
+    <span id="hora">--</span>
+
+</div>
+
+<section id="alerta" class="alerta">
+
+    ✅ Sin riesgo de inundación.
+
+</section>
+
+<section class="panel">
+
+    <h2>📊 Temperatura en tiempo real</h2>
+
+    <canvas id="graficoTemperatura"></canvas>
+
+</section>
+
+<section class="panel">
+
+<h2>🗺 Mapa de monitoreo</h2>
+
+<div id="mapa"></div>
+
+</section>
+
+<section class="panel">
+
+    <h2>📋 Historial de alertas</h2>
+
+    <table id="tablaAlertas">
+
+        <thead>
+
+            <tr>
+
+                <th>Hora</th>
+                <th>Temperatura</th>
+                <th>Riesgo</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
